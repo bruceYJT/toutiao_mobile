@@ -79,8 +79,8 @@ export default {
     width: 116px;
     height: 73px;
   }
-}
-.cover-wrap {
+
+  .cover-wrap {
     padding: 15px 0;
     display: flex;
     .cover-wrap-item {
@@ -94,12 +94,14 @@ export default {
         height: 73px;
       }
     }
-    .label-wrap {
-      font-size: 11px;
-      color: #b4b4b4;
-    }
-    .label-wrap span {
-      margin-right: 12px;
-    }
   }
+
+  .label-wrap {
+    font-size: 11px;
+    color: #b4b4b4;
+  }
+  .label-wrap span {
+    margin-right: 12px;
+  }
+}
 </style>

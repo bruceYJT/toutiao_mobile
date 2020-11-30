@@ -73,7 +73,7 @@ export default {
   props: {},
   data () {
     return {
-      active: 1, // 控制被激活的标签
+      active: 0, // 控制被激活的标签
       channels: [], // 频道列表
       isChannelEditShow: false
     }
