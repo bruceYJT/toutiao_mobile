@@ -17,6 +17,7 @@
         v-for="(channel, index) in userChannels"
         :key="index"
         :text="channel.name"
+        :class="{ active: index === active }"
         :icon="(isEdit && index !== 0) ? 'clear' : ''"
         @click="onUserChannelClick(index)"
       />
@@ -47,6 +48,10 @@ export default {
   props: {
     userChannels: {
       type: Array,
+      required: true
+    },
+    active: {
+      type: Number,
       required: true
     }
   },
@@ -116,44 +121,39 @@ export default {
 </script>
 
 <style scoped lang="less">
-.article-item {
-  .title {
+.channel-edit {
+  padding-top: 54px;
+
+  .channel-title {
     font-size: 16px;
-    color: #3a3a3a;
-  }
-  /deep/ .van-cell__value {
-    flex: unset;
-    width: 116px;
-    height: 73px;
-    margin-left: 12px;
-  }
-  .right-cover {
-    width: 116px;
-    height: 73px;
+    color: #333333;
   }
 
-  .cover-wrap {
-    padding: 15px 0;
-    display: flex;
-    .cover-wrap-item {
-      flex: 1;
-      height: 73px;
-      &:not(:last-child) {
-        padding-right: 4px;
+  .grid-item {
+    width: 80px;
+    height: 43px;
+    /deep/ .van-grid-item__content {
+      background-color: #f4f5f6;
+      .van-grid-item__text {
+        font-size: 14px;
+        color: #222;
+        margin-top: 0;
       }
-      .cover-image {
-        width: 100%;
-        height: 73px;
-      }
+    }
+    /deep/ .van-grid-item__icon {
+      position: absolute;
+      right: -5px;
+      top: -5px;
+      font-size: 20px;
+      color: #ccc;
+      z-index: 5;
     }
   }
 
-  .label-wrap {
-    font-size: 11px;
-    color: #b4b4b4;
-  }
-  .label-wrap span {
-    margin-right: 12px;
+  .active {
+    /deep/ .van-grid-item__text {
+      color: red !important;
+    }
   }
 }
 </style>

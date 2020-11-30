@@ -48,6 +48,7 @@
     >
      <channel-edit
      :user-channels="channels"
+     :active="active"
      @close="isChannelEditShow = false"
      @update-active="active = $event"
      />
