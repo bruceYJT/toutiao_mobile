@@ -46,7 +46,11 @@
       get-container="body"
       style="height: 100%"
     >
-     <channel-edit :user-channels="channels" />
+     <channel-edit
+     :user-channels="channels"
+     @close="isChannelEditShow = false"
+     @update-active="active = $event"
+     />
     </van-popup>
   </div>
 </template>
