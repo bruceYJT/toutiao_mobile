@@ -4,7 +4,7 @@
       title="搜索历史"
     >
       <div v-if="isDeleteShow">
-        <span>全部删除</span>
+        <span @click="$emit('update-histories', [])">全部删除</span>
         &nbsp;&nbsp;
         <span @click="isDeleteShow = false">完成</span>
       </div>
@@ -29,6 +29,8 @@
 </template>
 
 <script>
+// import { setItem } from '@/utils/storage'
+
 export default {
   name: 'SearchHistory',
   components: {},
@@ -55,6 +57,7 @@ export default {
         // 持久化处理
         // 1. 修改本地存储的数据
         // 2. 请求接口删除线上的数据
+        // setItem('search-histories', this.searchHistories)
         return
       }
 
