@@ -37,6 +37,7 @@
         ref="article-content"
       ></div>
       <!-- 文章评论列表 -->
+      <comment-list />
       <!-- /文章评论列表 -->
     </div>
 
@@ -80,10 +81,13 @@ import {
 } from '@/api/article'
 import { ImagePreview } from 'vant'
 import { addFollow, deleteFollow } from '@/api/user'
+import CommentList from './components/comment-list'
 
 export default {
   name: 'ArticleIndex',
-  components: {},
+  components: {
+    CommentList
+  },
   // 在组件中获取动态路由参数：
   //    方式一：this.$route.params.articleId
   //    方式二：props 传参，推荐
