@@ -47,12 +47,12 @@
       get-container="body"
       style="height: 100%"
     >
-     <!-- <channel-edit
+     <channel-edit
      :user-channels="channels"
      :active="active"
      @close="isChannelEditShow = false"
      @update-active="active = $event"
-     /> -->
+     />
     </van-popup>
   </div>
 </template>
@@ -60,14 +60,14 @@
 <script>
 import { getUserChannels } from '@/api/user'
 import ArticleList from './components/article-list'
-// import ChannelEdit from './components/channel-edit'
+import ChannelEdit from './components/channel-edit'
 import { mapState } from 'vuex'
 import { getItem } from '@/utils/storage'
 export default {
   name: 'HomeIndex',
   components: {
-    ArticleList
-    // ChannelEdit
+    ArticleList,
+    ChannelEdit
   },
   props: {},
   data () {
