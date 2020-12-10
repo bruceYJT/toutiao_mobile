@@ -1,10 +1,10 @@
 <template>
-  <div class="home-container">问答</div>
+  <div class="login-container">问答</div>
 </template>
 
 <script>
 export default {
-  name: 'HomeIndex',
+  name: 'LoginIndex',
   components: {},
   props: {},
   data () {

@@ -8,18 +8,12 @@
     />
 
     <!-- 登录表单 -->
-    <van-form
-      :show-error="false"
-      :show-error-message="false"
-      validate-first
-      @submit="onLogin"
-      @failed="onFailed"
-    >
+    <van-form @submit="onLogin" @failed="onFailed" show-error="false" :show-error-message="false">
       <van-field
         v-model="user.mobile"
         icon-prefix="toutiao"
         left-icon="shouji"
-        name="手机号"
+        name='手机号'
         placeholder="请输入手机号"
         :rules="formRules.mobile"
       />
@@ -27,8 +21,8 @@
         v-model="user.code"
         clearable
         icon-prefix="toutiao"
-        name="验证码"
         left-icon="yanzhengma"
+        name='验证码'
         placeholder="请输入验证码"
         :rules="formRules.code"
       >
@@ -41,12 +35,8 @@
         </template>
       </van-field>
       <div class="login-btn-wrap">
-      <van-button
-        class="login-btn"
-        type="info"
-        block
-      >登录</van-button>
-    </div>
+        <van-button class='login-btn' type="info" block>登录</van-button>
+      </div>
     </van-form>
     <!-- /登录表单 -->
   </div>
@@ -54,7 +44,6 @@
 
 <script>
 import { login } from '@/api/user'
-
 export default {
   name: 'HomeIndex',
   components: {},
@@ -100,7 +89,6 @@ export default {
         forbidClick: true, // 禁止背景点击
         duration: 0 // 展示时长(ms)，值为 0 时，toast 不会消失
       })
-
       try {
         const { data } = await login(this.user)
         // 4. 处理响应结果
