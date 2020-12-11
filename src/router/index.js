@@ -44,6 +44,17 @@ const routes = [
         name: 'article',
         component: () => import('@/views/article/'),
         props: true
+      },
+      {
+        path: '/user/profile',
+        name: 'user-profile',
+        component: () => import('@/views/user-profile')
+      },
+      { // 用户关注/粉丝
+        path: '/user/:userId/follow',
+        component: () => import('@/views/user-follow'),
+        props: true,
+        meta: { requiresAuth: true }
       }
     ]
   }
