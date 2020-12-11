@@ -62,9 +62,7 @@ export default {
   },
   computed: {},
   watch: {},
-  created () {
-    this.timestamp = 1589337751688
-  },
+  created () {},
   mounted () {},
   methods: {
     async onRefresh () {
@@ -72,7 +70,8 @@ export default {
       // 1. 请求获取数据
       const { data } = await getArticles({
         channel_id: this.channel.id, // 频道 ID
-        timestamp: Date.now(), // 为了大家方便学习，只要你传递不同的时间戳就一定给你返回不一样的数据，而且数据不为空
+        timestamp: this.timestamp || Date.now(),
+        refresh: 1,
         with_top: 1
       })
       // 2. 把数据放到数据列表中（往顶部追加）
@@ -88,6 +87,7 @@ export default {
       const { data } = await getArticles({
         channel_id: this.channel.id, // 频道 ID
         timestamp: this.timestamp || Date.now(), // 时间戳，请求新的推荐数据传当前的时间戳，请求历史推荐传指定的时间戳，timestamp 相当于页码，请求最新数据使用当前最新时间戳，下一页数据使用上一次返回的数据中的时间戳
+        refresh: 0, // 是否是刷新请求
         with_top: 1 // 是否包含置顶，进入页面第一次请求时要包含置顶文章，1-包含置顶，0-不包含
       })
       console.log(data)
