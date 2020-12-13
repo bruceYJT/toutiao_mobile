@@ -290,7 +290,7 @@ ul {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
